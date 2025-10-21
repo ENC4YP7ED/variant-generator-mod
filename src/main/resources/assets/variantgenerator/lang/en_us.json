@@ -1,0 +1,17 @@
+{
+  "mod.variantgenerator": "Variant Generator",
+  "mod.variantgenerator.description": "Automatically generates netherite and enderite variants for items from other mods",
+
+  "itemGroup.variantgenerator": "Variant Generator",
+
+  "message.variantgenerator.variant_generated": "Generated %s variant: %s",
+  "message.variantgenerator.texture_colorized": "Colorized texture: %s",
+  "message.variantgenerator.recipe_created": "Created recipe: %s",
+
+  "error.variantgenerator.texture_not_found": "Could not find texture: %s",
+  "error.variantgenerator.model_generation_failed": "Failed to generate model for: %s",
+  "error.variantgenerator.recipe_generation_failed": "Failed to generate recipe for: %s",
+
+  "tooltip.variantgenerator.tier.netherite": "Netherite Tier",
+  "tooltip.variantgenerator.tier.enderite": "Enderite Tier"
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.mojang.util">
+    <Appenders>
+        <Console name="SysOut" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level]: %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="SysOut" />
+        </Root>
+        <Logger name="VariantGenerator" level="debug" additivity="false">
+            <AppenderRef ref="SysOut" />
+        </Logger>
+        <Logger name="VariantGenerator-Texture" level="debug" additivity="false">
+            <AppenderRef ref="SysOut" />
+        </Logger>
+        <Logger name="VariantGenerator-Registry" level="debug" additivity="false">
+            <AppenderRef ref="SysOut" />
+        </Logger>
+        <Logger name="VariantGenerator-Recipe" level="debug" additivity="false">
+            <AppenderRef ref="SysOut" />
+        </Logger>
+        <Logger name="VariantGenerator-Core" level="debug" additivity="false">
+            <AppenderRef ref="SysOut" />
+        </Logger>
+    </Loggers>
+</Configuration>
