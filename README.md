@@ -93,6 +93,28 @@ Feel free to submit issues and pull requests!
 
 MIT License
 
+## Quick Start
+
+### For Users
+1. Download the latest mod JAR from [Releases](https://github.com/ENC4YP7ED/variant-generator-mod/releases)
+2. Place in `.minecraft/mods` folder
+3. Launch Minecraft with NeoForge 1.21.1+
+4. The mod will automatically:
+   - Scan for iron items from other mods
+   - Generate netherite and enderite variants
+   - Create textures and recipes
+
+### For Developers
+1. Clone the repository
+2. Run `./gradlew build` to compile
+3. Run `./gradlew runClient` to test
+4. See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed design
+
+## Documentation
+
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System design and component descriptions
+- **[FEATURES.md](FEATURES.md)** - Complete feature list and capabilities
+
 ## Support
 
 For issues and questions, please open an issue on GitHub.
