@@ -2,6 +2,8 @@ plugins {
     id 'dev.architectury.loom' version '1.10-SNAPSHOT'
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'maven-publish'
+    id 'net.neoforged.gradle' version '[6.0.14,6.2)'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
 
 base {
@@ -16,6 +18,8 @@ repositories {
     maven { url = "https://maven.shedaniel.me/" }
     maven { url = "https://maven.architectury.dev/" }
     maven { url = "https://maven.neoforged.net/releases/" }
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
 }
 
 dependencies {
@@ -28,6 +32,12 @@ dependencies {
     modImplementation "net.neoforged:neoforge:${neoforge_version}"
     modImplementation "dev.architectury:architectury-neoforge:${architectury_api_version}"
     modImplementation "me.shedaniel.cloth:cloth-config:${cloth_config_version}-neoforge"
+
+    // Enderite Mod Dependency
+    modImplementation "com.github.Nic4Las:Minecraft-Enderite-Mod:${enderite_mod_version}"
+
+    // Mixin
+    modImplementation "org.spongepowered:mixin:0.8.5"
 }
 
 java {
@@ -39,6 +49,14 @@ java {
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     it.options.release = 21
+}
+
+mixin {
+    add sourceSets.main, "variantgenerator.mixins.json"
+}
+
+tasks.named('compileJava').configure {
+    source rootProject.sourceSets.main.java
 }
 
 publishing {

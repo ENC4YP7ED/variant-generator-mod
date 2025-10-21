@@ -1,8 +1,9 @@
-modLoader="javafxmod"
-loaderVersion="[1,)"
+modLoader="neoforge"
+loaderVersion="[21,)"
 license="MIT"
 showAsResourcePack=false
 updateJSONURL=""
+mixin="variantgenerator.mixins.json"
 
 [[mods]]
 modId="variantgenerator"
@@ -13,13 +14,14 @@ credits="Variant Generator Development Team"
 authors="Developer"
 description="""
 Automatically generates netherite and enderite variants for items from other mods.
-Scans for iron variants, colorizes textures, and generates recipes.
+Uses mixins to extract colors and stats from the Enderite mod.
+Scans for iron variants, colorizes textures, generates recipes, and balances stats.
 """
 
 [[dependencies.variantgenerator]]
     modId="neoforge"
     mandatory=true
-    versionRange="[21.0,)"
+    versionRange="[21,)"
     ordering="NONE"
     side="BOTH"
 
@@ -27,5 +29,12 @@ Scans for iron variants, colorizes textures, and generates recipes.
     modId="architectury"
     mandatory=true
     versionRange="[15.0.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.variantgenerator]]
+    modId="enderitemod"
+    mandatory=true
+    versionRange="[1.7.0,)"
     ordering="NONE"
     side="BOTH"

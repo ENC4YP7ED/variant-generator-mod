@@ -2,6 +2,8 @@ package net.variantgenerator.mod.core;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.equipment.EquipmentType;
+import net.variantgenerator.mod.core.EnderiteStatCache.ToolStats;
+import net.variantgenerator.mod.core.EnderiteStatCache.ArmorStats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -170,6 +172,48 @@ public class VariantRegistry {
      */
     public int size() {
         return registeredVariants.size();
+    }
+
+    /**
+     * Scales stats using Enderite mod cached statistics
+     * Provides access to actual Enderite material stats for comparison
+     */
+    public static ItemStats scaleStatsUsingEnderite(ItemStats baseStats, ItemVariantTier targetTier) {
+        ItemStats scaled = baseStats.copy();
+
+        // Get Enderite stats for reference
+        ToolStats enderiteStats = EnderiteStatCache.getToolStats("enderite");
+        ToolStats baseToolStats = EnderiteStatCache.getToolStats("iron");
+
+        if (enderiteStats != null && baseToolStats != null) {
+            // Use actual Enderite multipliers
+            float multiplier = (float) enderiteStats.durability / baseToolStats.durability;
+
+            LOGGER.debug("Using Enderite stat multiplier: {}", multiplier);
+
+            // Apply scaling
+            if (scaled.miningSpeed > 0) {
+                scaled.miningSpeed *= multiplier;
+            }
+            if (scaled.attackDamage > 0) {
+                scaled.attackDamage *= multiplier;
+            }
+            if (scaled.durability > 0) {
+                scaled.durability = (int) (scaled.durability * multiplier);
+            }
+            if (scaled.armor > 0) {
+                scaled.armor = (int) Math.ceil(scaled.armor * multiplier);
+            }
+            if (scaled.toughness > 0) {
+                scaled.toughness *= multiplier;
+            }
+        } else {
+            // Fall back to tier multiplier
+            LOGGER.debug("Enderite stats not available, using tier multiplier");
+            scaled = scaleStats(baseStats, targetTier);
+        }
+
+        return scaled;
     }
 
     /**

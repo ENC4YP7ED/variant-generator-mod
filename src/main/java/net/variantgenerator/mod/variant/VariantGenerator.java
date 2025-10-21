@@ -1,5 +1,6 @@
 package net.variantgenerator.mod.variant;
 
+import net.variantgenerator.mod.core.*;
 import net.variantgenerator.mod.core.VariantRegistry;
 import net.variantgenerator.mod.core.VariantRegistry.ItemVariantTier;
 import net.variantgenerator.mod.core.VariantRegistry.VariantConfig;
@@ -170,27 +171,31 @@ public class VariantGenerator {
 
     /**
      * Gets reference colors for a specific tier
-     * These should match the Enderite mod's color schemes
+     * Uses cached colors from Enderite mod when available
+     * Falls back to default colors if Enderite colors not cached
      */
     private GrayscaleAnalysis getReferenceColorForTier(ItemVariantTier tier) {
         switch (tier) {
             case NETHERITE:
-                // Netherite dark gray color
-                Pixel netheriteLight = new Pixel(100, 100, 120, 255);
-                Pixel netheriteDark = new Pixel(40, 40, 50, 255);
+                // Try to get from cache first, fall back to defaults
+                Pixel netheriteLight = EnderiteColorCache.getBrightColor("netherite");
+                Pixel netheriteDark = EnderiteColorCache.getDarkColor("netherite");
+                LOGGER.debug("Using Netherite colors from cache: {} - {}", netheriteLight, netheriteDark);
                 return new GrayscaleAnalysis(255, 0, netheriteLight, netheriteDark, 255, 0);
 
             case ENDERITE:
-                // Enderite cyan color (from enderite_ingot.png analysis)
-                Pixel enderiteLight = new Pixel(29, 94, 83, 255);
-                Pixel enderiteDark = new Pixel(4, 14, 12, 255);
+                // Try to get from cache first, fall back to defaults
+                Pixel enderiteLight = EnderiteColorCache.getBrightColor("enderite");
+                Pixel enderiteDark = EnderiteColorCache.getDarkColor("enderite");
+                LOGGER.debug("Using Enderite colors from cache: {} - {}", enderiteLight, enderiteDark);
                 return new GrayscaleAnalysis(255, 0, enderiteLight, enderiteDark, 255, 0);
 
             case IRON:
             default:
-                // Iron grayscale (no change)
-                Pixel ironLight = new Pixel(255, 255, 255, 255);
-                Pixel ironDark = new Pixel(53, 53, 53, 255);
+                // Iron grayscale
+                Pixel ironLight = EnderiteColorCache.getBrightColor("iron");
+                Pixel ironDark = EnderiteColorCache.getDarkColor("iron");
+                LOGGER.debug("Using Iron colors from cache: {} - {}", ironLight, ironDark);
                 return new GrayscaleAnalysis(255, 0, ironLight, ironDark, 255, 0);
         }
     }
