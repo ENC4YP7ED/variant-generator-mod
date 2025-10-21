@@ -7,7 +7,9 @@
   "mixins": [
     "EnderiteColorExtractorMixin",
     "EnderiteMaterialInjectorMixin",
-    "EnderiteRegistryInterceptorMixin"
+    "EnderiteRegistryInterceptorMixin",
+    "EnderiteSmithingTableMixin",
+    "EnchantabilityTrackerMixin"
   ],
   "client": [
     "EnderiteTextureLoaderMixin"
