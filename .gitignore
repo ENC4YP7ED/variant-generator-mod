@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+gradle/
+gradlew
+gradlew.bat
+
+# IDE
+.idea/
+.eclipse/
+*.iml
+*.iws
+*.ipr
+*.classpath
+*.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Minecraft
+run/
+.minecraft/
+
+# Build artifacts
+out/
+*.jar
+*.zip
+
+# Environment
+.env
+.vscode/
+*.swp
+*.swo
+*~
