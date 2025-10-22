@@ -114,6 +114,9 @@ MIT License
 
 - **[ARCHITECTURE.md](ARCHITECTURE.md)** - System design and component descriptions
 - **[FEATURES.md](FEATURES.md)** - Complete feature list and capabilities
+- **[MIXINS.md](MIXINS.md)** - Mixin system and Enderite integration details
+- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Development guide and common tasks
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
 
 ## Support
 

@@ -9,7 +9,11 @@
     "EnderiteMaterialInjectorMixin",
     "EnderiteRegistryInterceptorMixin",
     "EnderiteSmithingTableMixin",
-    "EnchantabilityTrackerMixin"
+    "EnchantabilityTrackerMixin",
+    "WeaponDamageTrackerMixin",
+    "ArmorEffectivenessMixin",
+    "OreBlockHardnessMixin",
+    "LootTableGeneratorMixin"
   ],
   "client": [
     "EnderiteTextureLoaderMixin"
