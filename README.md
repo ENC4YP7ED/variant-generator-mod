@@ -1,6 +1,12 @@
 # Variant Generator Mod
 
-An intelligent Minecraft mod for NeoForge 1.21.1 that automatically generates netherite and enderite variants for items from other mods.
+[![NeoForge](https://img.shields.io/badge/NeoForge-21.1.24%2B-orange?logo=neoforged)](https://neoforged.net/)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.21.1-brightgreen?logo=minecraft)](https://minecraft.net/)
+[![Java](https://img.shields.io/badge/Java-21%2B-red?logo=java)](https://www.java.com/)
+[![GitHub License](https://img.shields.io/github/license/ENC4YP7ED/variant-generator-mod?color=green)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/ENC4YP7ED/variant-generator-mod?color=yellow)](https://github.com/ENC4YP7ED/variant-generator-mod/stargazers)
+
+An intelligent Minecraft mod for NeoForge 1.21.1 that automatically generates netherite and enderite variants for items from other mods. Uses advanced mixin-based integration with the Enderite mod to extract colors and statistics for perfectly balanced variants.
 
 ## Features
 
@@ -112,11 +118,24 @@ MIT License
 
 ## Documentation
 
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System design and component descriptions
+### Getting Started
+- **[INSTALLATION.md](INSTALLATION.md)** - Installation guide with 3 methods (CurseForge, manual, source)
+- **[Quick Start](#quick-start)** - Below, for immediate setup
 - **[FEATURES.md](FEATURES.md)** - Complete feature list and capabilities
-- **[MIXINS.md](MIXINS.md)** - Mixin system and Enderite integration details
+
+### Integration & Examples
+- **[INTEGRATION_EXAMPLE.md](INTEGRATION_EXAMPLE.md)** - How to integrate with your mod
+- **[ENDERITE_INTEGRATION.md](ENDERITE_INTEGRATION.md)** - Detailed Enderite mod integration
+
+### Technical Documentation
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System design and component descriptions (700+ lines)
+- **[MIXINS.md](MIXINS.md)** - Mixin system and code injection details (500+ lines)
+
+### Development & Testing
 - **[DEVELOPMENT.md](DEVELOPMENT.md)** - Development guide and common tasks
+- **[TESTING.md](TESTING.md)** - Testing framework and guidelines
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contribution guidelines
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and planned features
 
 ## Support
 
